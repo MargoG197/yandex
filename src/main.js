@@ -235,7 +235,7 @@ arr.forEach((item) => {
 
 
 
-const width = 414
+const width = 414;
 
 
 function goToSlide() {
