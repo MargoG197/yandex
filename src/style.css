@@ -148,7 +148,7 @@ display: inline-block;
 	}
 }
 
-///////////////////////////////////////////////////////////
+/* /////////////////////////////////////////////////////////// */
 #div2{
 	background-color: white;
 }
@@ -267,7 +267,7 @@ width:528px;
 }
 
 
-////////////////////////
+/* //////////////////////// */
 #div3{
 	margin: 0 72px;
 }
@@ -381,21 +381,24 @@ font-size: 20px;
 .box3 div{
 	width:270px;
 }
-
-///////////////
+/* 
+/////////////// */
 
 /* #div4{
 	background-color: white;
 } */
+
 .div4_content{
 	display: flex;
 	justify-content: center;
 	width:screen;
+	flex-direction: column;
 }
 .div4_content_main{
 	display: flex;
 	justify-content: center;
 	width:screen;
+
 }
 
 .div4_top_div{
