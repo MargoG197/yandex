@@ -13,6 +13,7 @@
 body {
   margin: 0;
 	overflow-x: hidden;
+	box-sizing: border-box;
 }
 .top_div{
 	height:fit-content;
@@ -404,20 +405,45 @@ font-size: 20px;
 	display: flex;
 	flex-direction: column;
 }
-.caruselContainer{
+
+ .container{
+	position: relative;
 	width: 1222px;
+	height: 462px;
+	margin-top:60px;
 	height: 462px;
 	overflow-x: hidden;
 	margin-bottom: 140px;
-	position: relative;
-}
-.carusel{
-  width: fit-content;
+	display: flex;
+ }
+
+ .container .slide .card{
+	position: absolute;
+	width: fit-content;
 	display: flex;
 	white-space: 20px;
-	transition: margin-left 250ms;
-}
- 
+	transition: 500ms;
+ }
+
+ .slide .card:nth-child(1){
+	left: -404px
+ }
+ .slide .card:nth-child(2){
+	left: 0px
+ }
+ .slide .card:nth-child(3){
+	left: 404px
+ }
+ .slide .card:nth-child(4){
+	left: 808px
+ }
+ .slide .card:nth-child(5){
+	left: 1212px
+ }
+ .slide .card:nth-child(6){
+	left: 1616px
+ }
+
 .card{
 flex:1;
 width: 394px;
@@ -470,32 +496,31 @@ h2{
 	color: #313131;
 	font-weight: 400;
 }
-.topCarusel{
+.topCarousel{
 	display: flex;
 	justify-content: space-between;
 }
-.carusel_btns{
+.carousel_btns{
 	width: 151px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-.carusel_btns img{
+.carousel_btns img{
 	width: 44px;
 	min-width: 44px;
 	height: 44px;
 	min-height: 44px;
 }
-.carusel_btns p{
+.carousel_btns p{
 	font-size: 20px;
 	color:black
 }
-.carusel_btns p{
+.carousel_btns p{
 	font-size: 20px;
 	color:black
 }
 
-
-#right{
+#next{
 	transform:  scale(-1, 1)
 }

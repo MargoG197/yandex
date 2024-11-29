@@ -186,27 +186,64 @@ let arr = [
    </div>`
 ];
 
-let currentIndex = 0
-
-
 
 document.querySelector('#div4').innerHTML = `
-      <div class="div4_content">
+     <div class="div4_content">
       <div class="div4_content_main">
         <div class="div4_top_div">
-          <div class="topCarusel">
+          <div class="topCarousel">
             <div class="div3_top_div_text">Участники турнира</div>
-            <div class="carusel_btns">
-              <img id="left" src="${arrowLeft}" />
-              <p id="slideNumber">0</p><p>/ ${arr.length}</p>
-              <img id="right" src="${arrowLeft}" />
+            <div class="carousel_btns">
+              <img id="prev" src="${arrowLeft}" />
+              <p id="slideNumber">0</p>
+              <p>/ 6</p>
+              <img id="next" src="${arrowLeft}" />
             </div>
           </div>
-          <div class="caruselContainer">
-					<div id="carusel" class="carusel"></div>
-					</div>
-        </div>
+ <section class="container">
+      <div class="slide">
+            <div class="card">
+              <img src="${participant}" />
+              <h1>Хозе-Рауль Капабланка</h1>
+              <h2>Чемпион мира по шахматам</h2>
+              <button class="details">Подробнее</button>
+            </div>
+            <div class="card">
+              <img src="${participant}" />
+              <h1>Эммануил Ласкер</h1>
+              <h2>Чемпион мира по шахматам</h2>
+              <button class="details">Подробнее</button>
+            </div>
+            <div class="card">
+              <img src="${participant}" />
+              <h1>Александр Алехин</h1>
+              <h2>Чемпион мира по шахматам</h2>
+              <button class="details">Подробнее</button>
+            </div>
+            <div class="card">
+              <img src="${participant}" />
+              <h1>Арон Нимцович</h1>
+              <h2>Чемпион мира по шахматам</h2>
+              <button class="details">Подробнее</button>
+            </div>
+            <div class="card">
+              <img src="${participant}" />
+              <h1>Рихард Рети</h1>
+              <h2>Чемпион мира по шахматам</h2>
+              <button class="details">Подробнее</button>
+            </div>
+            <div class="card">
+              <img src="${participant}" />
+              <h1>Остап Бендер</h1>
+              <h2>Гроссмейстер</h2>
+              <button class="details">Подробнее</button>
+            </div>
       </div>
+    </section>
+        </div>
+       
+      </div>
+      
       <section class="string">
         <div class="div1">
           Лёд тронулся, господа присяжные заседатели! • Шахматы двигают вперёд
@@ -230,49 +267,21 @@ document.querySelector('#div4').innerHTML = `
 `
 
 
-let carusel = document.querySelector('#carusel');
+let next = document.querySelector("#next");
+let prev = document.querySelector("#prev");
 
 
-arr.forEach((item) => {
-	carusel.innerHTML += `${item}`
-});
+next.addEventListener('click', function () {
+  let items = document.querySelectorAll('.card');
+  document.querySelector('.slide').appendChild(items[0])
+})
 
+prev.addEventListener('click', function () {
+  let items = document.querySelectorAll('.card');
+  document.querySelector('.slide').prepend(items[items.length - 1])
+})
 
-
-const width = 414;
-
-
-function goToSlide() {
-	carusel.style.marginLeft = `${currentIndex * width}px`;
-	console.log(`${currentIndex * width}px`, currentIndex)
-
-}
- 
-function goToPrevSlide() {
-	if (currentIndex != -3) {
-		currentIndex -= 1;
-		goToSlide();
-		document.querySelector('#left').style.display = 'block'
-	} else {
-		document.querySelector('#right').style.display = 'none'
-		
-	}
-}
-function goToNextSlide() {
-	if (currentIndex!=0) {
-		currentIndex += 1;
-		goToSlide();
-		document.querySelector('#right').style.display = 'block'
-	} else {
-		document.querySelector('#left').style.display = 'none'
-	}
-}
-
-
-document.querySelector('#right').addEventListener('click', () => {
-	goToPrevSlide()
-});
-
-document.querySelector('#left').addEventListener('click', () => {
-	goToNextSlide()
-});
+setTimeout(() => {
+  let items = document.querySelectorAll('.card');
+  document.querySelector('.slide').appendChild(items[0])
+}, 4000)
