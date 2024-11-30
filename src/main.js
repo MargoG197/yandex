@@ -52,13 +52,16 @@ document.querySelector('#div2').innerHTML = `
   <div class="div2_top_div">
 	<div class="div2_top_div_main">
 	<div class="div2_top_div_text">
-	Чтобы поддержать <br/>Международный васюкинский турнир посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
+	Чтобы поддержать <br/>Международный васюкинский турнир
+	</div>
+  <div class="div2_top_div_text">
+	посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
 	</div>
 	<div class="div2_second_div">
 	<img src="${pic}"/>
 	<div class="div2_second_div_right_side">
 	<div class="div2_second_div_right_side_1">
-	и Сеанс <b>одновременной игры<br/> в шахматы на 160 досках</b> гроссмейстера О. Бендера
+	и Сеанс <b>одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
 	</div>
 	<div>
 	<table id="table" class="table">
@@ -147,45 +150,6 @@ document.querySelector('#div3').innerHTML = `
     </div>
 </div>`;
 
-let arr = [
-	`<div class="card">
-   <img src="${participant}" />
-   <h1>Хозе-Рауль Капабланка</h1>
-   <h2>Чемпион мира по шахматам</h2>
-   <button class="details">Подробнее</button>
-   </div>`,
-	`<div class="card">
-   <img src="${participant}" />
-   <h1>Эммануил Ласкер</h1>
-   <h2>Чемпион мира по шахматам</h2>
-   <button class="details">Подробнее</button>
-	 </div>`,
-	`<div class="card">
-   <img src="${participant}" />
-   <h1>Александр Алехин</h1>
-   <h2>Чемпион мира по шахматам</h2>
-   <button class="details">Подробнее</button>
-   </div>`,
-	`<div class="card">
-   <img src="${participant}" />
-   <h1>Арон Нимцович</h1>
-   <h2>Чемпион мира по шахматам</h2>
-   <button class="details">Подробнее</button>
-   </div>`,
-	`<div class="card">
-   <img src="${participant}" />
-   <h1>Рихард Рети</h1>
-   <h2>Чемпион мира по шахматам</h2>
-   <button class="details">Подробнее</button>
-   </div>`,
-	`<div class="card">
-   <img src="${participant}" />
-   <h1>Остап Бендер</h1>
-   <h2>Гроссмейстер</h2>
-   <button class="details">Подробнее</button>
-   </div>`
-];
-
 
 document.querySelector('#div4').innerHTML = `
      <div class="div4_content">
@@ -195,7 +159,7 @@ document.querySelector('#div4').innerHTML = `
             <div class="div3_top_div_text">Участники турнира</div>
             <div class="carousel_btns">
               <img id="prev" src="${arrowLeft}" />
-              <p id="slideNumber">0</p>
+              <p id="slideNumber">1</p>
               <p>/ 6</p>
               <img id="next" src="${arrowLeft}" />
             </div>
@@ -269,19 +233,34 @@ document.querySelector('#div4').innerHTML = `
 
 let next = document.querySelector("#next");
 let prev = document.querySelector("#prev");
-
+let count = 1;
 
 next.addEventListener('click', function () {
+  count++
+  if (count == 7) {
+    count = 1
+  }
   let items = document.querySelectorAll('.card');
   document.querySelector('.slide').appendChild(items[0])
+   document.querySelector("#slideNumber").innerHTML =`${count}`
 })
 
 prev.addEventListener('click', function () {
+  count--
+  if (count == 0) {
+    count = 6
+  }
   let items = document.querySelectorAll('.card');
   document.querySelector('.slide').prepend(items[items.length - 1])
+  document.querySelector("#slideNumber").innerHTML =`${count}`
 })
 
 setTimeout(() => {
+  count++
+  if (count == 7) {
+    count = 1
+  }
   let items = document.querySelectorAll('.card');
-  document.querySelector('.slide').appendChild(items[0])
+  document.querySelector('.slide').appendChild(items[0]);
+   document.querySelector("#slideNumber").innerHTML =`${count}`
 }, 4000)
