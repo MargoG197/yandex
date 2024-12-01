@@ -20,8 +20,8 @@ document.querySelector('#div1').innerHTML = `
               васюкинского турнира по шахматам
             </p>
             <div class="top_div_content_buttons_div">
-              <button class="btn btndark">Поддержать<br/> шахматную мысль</button>
-              <button class="btn btnlight">Подробнее<br/> о турнире</button>
+              <button  class="btn btndark"><a href="#div2">Поддержать<br/> шахматную мысль</a></button>
+              <button class="btn btnlight"><a href="#div3">Подробнее<br/> о турнире</a></button>
             </div>
           </div>
           <div class="top_div_content_pic">
@@ -47,16 +47,26 @@ document.querySelector('#div1').innerHTML = `
       </section>
 `
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+ 
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
 document.querySelector('#div2').innerHTML = `
 
   <div class="div2_top_div">
 	<div class="div2_top_div_main">
 	<div class="div2_top_div_text">
-	Чтобы поддержать <br/>Международный васюкинский турнир
+	<p>Чтобы поддержать <br/>Международный васюкинский турнир</p>
+  <p>посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
+	</p>
 	</div>
-  <div class="div2_top_div_text">
-	посетите лекцию на тему: <b>«Плодотворная дебютная идея»</b>
-	</div>
+  
 	<div class="div2_second_div">
 	<img src="${pic}"/>
 	<div class="div2_second_div_right_side">
@@ -100,45 +110,51 @@ document.querySelector('#div3').innerHTML = `
       <div class="div3_top_div_text">
         Этапы преображения<br />
         Васюков<b
-          >Будущие источники<br />
+          >Будущие источники
           обогащения васюкинцев</b
         >
       </div>
-      <div class="grid">
-        <div class="box box11 box1">
-          <p>1</p>
-          <div>Строительство железнодорожной магистрали Москва-Васюки</div>
-        </div>
-        <div class="box box11 box2">
-          <p>2</p>
-          <div>
-            Открытие фешенебельной гостиницы «Проходная пешка» и других
-            небоскрёбов
+          <div class="greedSliderBox">
+      <div class="grid" id="sliderGrid">
+        <div class="boxdiv boxdiv1">
+          <div class="box box11 box1">
+            <p>1</p>
+            <div>Строительство железнодорожной магистрали Москва-Васюки</div>
+          </div>
+          <div class="box box11 box2">
+            <p>2</p>
+            <div>
+              Открытие фешенебельной гостиницы «Проходная пешка» и других
+              небоскрёбов
+            </div>
           </div>
         </div>
-        <div class="box box3">
+        <div class="box box3 boxdiv boxdiv2">
           <p>5</p>
           <div>
             Поднятие сельского хозяйства в радиусе на тысячу километров:
             производство овощей, фруктов, икры, шоколадных конфет
           </div>
         </div>
-        <div class="box box11 box4">
-          <p>3</p>
-          <div>Строительство дворца для турнира</div>
+        <div class="boxdiv boxdiv3">
+          <div class="box box11 box4">
+            <p>3</p>
+            <div>Строительство дворца для турнира</div>
+          </div>
+          <div class="box box11 box5">
+            <p>4</p>
+            <div>Размещение гаражей для гостевого автотранспорта</div>
+          </div>
         </div>
-        <div class="box box11 box5">
-          <p>4</p>
-          <div>Размещение гаражей для гостевого автотранспорта</div>
-        </div>
-        <div class="box box11 box6">
+
+        <div class="box box11 box6 boxdiv boxdiv4">
           <p>6</p>
           <div>
             Постройка сверхмощной радиостанции для передачи всему миру
             сенсационных результатов
           </div>
         </div>
-        <div class="box box7">
+        <div class="box box7 boxdiv boxdiv5">
           <p>7</p>
           <div>
             Создание аэропорта «Большие Васюки» с регулярным отправлением
@@ -147,26 +163,101 @@ document.querySelector('#div3').innerHTML = `
           </div>
         </div>
       </div>
-       <div class="mobeliVersionBtns">
-              <img id="left" class="mobile_sliderBtn" src="${arrowLeft}" />
-              <p id="dots"></p>
-              <img id="right" class="mobile_sliderBtn" src="${arrowLeft}" />
-            </div>
+    </div>
+       <div class="mobiliVersionBtns">
+              <img id="left" class="mobile_sliderBtn dot" src="${arrowLeft}" />
+              <div id="dots">
+              <p class="dot black"></p>
+              <p class="dot"></p>
+              <p class="dot"></p>
+              <p class="dot"></p>
+              <p class="dot"></p>
+              </div>
+              <img id="right" class="mobile_sliderBtn dot black" src="${arrowLeft}" />
+        </div>
     </div>
 </div>`;
 
 
-let right = document.querySelector("#right");
-let left = document.querySelector("#left");
 
+let carousel = document.querySelector('#sliderGrid');
 
-right.addEventListener('click', function () {
+let prevIndex = 0;
+let currentIndex = 0;
+
+const width = 335;
+
+function goToSlide() {
+  carousel.style.marginLeft = `${currentIndex * width}px`;
+  console.log(`${currentIndex * width}px`, currentIndex)
+
+}
+ 
+function goToPrevSlide() {
+  if (currentIndex > -4) {
+    prevIndex = currentIndex
+    currentIndex -= 1;
+    goToSlide();
+    
+    document.querySelectorAll("#dots > p")[-prevIndex].classList.toggle('black')
+    document.querySelectorAll("#dots > p")[-currentIndex].classList.toggle('black')
+    if (currentIndex <0) {
+       document.querySelector('#left').classList.add('black')
+    };
+    if (currentIndex == -4) {
+      document.querySelector('#right').classList.remove('black')
+    }
+  }
+  }
   
-})
+  
 
-left.addEventListener('click', function () {
+function goToNextSlide() {
+  if (currentIndex < 0) {
+    prevIndex = currentIndex
+    currentIndex += 1;
+    goToSlide();
+    document.querySelectorAll("#dots > p")[-prevIndex].classList.toggle('black')
+    document.querySelectorAll("#dots > p")[-currentIndex].classList.toggle('black');
+
+    if (currentIndex > -4) {
+      document.querySelector('#right').classList.add('black')
+    };
+    if (currentIndex > -1) {
+      document.querySelector('#left').classList.remove('black')
+    }
+  }
+}
+
+document.querySelector('#right').addEventListener('click', () => {
+  goToPrevSlide()
 });
 
+document.querySelector('#left').addEventListener('click', () => {
+  goToNextSlide()
+});
+
+document.querySelectorAll("#dots > p").forEach((item, index) => {
+  item.addEventListener('click', () => {
+   prevIndex = currentIndex
+   currentIndex = -index;
+   goToSlide();
+   document.querySelectorAll("#dots > p")[-prevIndex].classList.toggle('black')
+    document.querySelectorAll("#dots > p")[-currentIndex].classList.toggle('black')
+    if (currentIndex > -4) {
+      document.querySelector('#right').classList.add('black')
+    };
+    if (currentIndex > -1) {
+      document.querySelector('#left').classList.remove('black')
+    }
+    if (currentIndex <0) {
+      document.querySelector('#left').classList.add('black')
+   };
+   if (currentIndex == -4) {
+     document.querySelector('#right').classList.remove('black')
+   }
+})
+})
 
 
 
@@ -177,11 +268,11 @@ document.querySelector('#div4').innerHTML = `
           <div class="topCarousel">
             <div class="div3_top_div_text">Участники турнира</div>
             <div class="carousel_btns">
-              <img id="prev" src="${arrowLeft}" />
+              <img id="prev" class="mobile_sliderBtn black" src="${arrowLeft}" />
               <p id="slideNumber">1</p>
               <p>/ 6</p>
-              <img id="next" src="${arrowLeft}" />
-            </div>
+              <img id="next" class="mobile_sliderBtn black" src="${arrowLeft}" />
+        </div>
           </div>
  <section class="container">
       <div class="slide">
@@ -274,7 +365,7 @@ prev.addEventListener('click', function () {
   document.querySelector("#slideNumber").innerHTML =`${count}`
 })
 
-setTimeout(() => {
+setInterval(() => {
   count++
   if (count == 7) {
     count = 1
