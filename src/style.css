@@ -1,5 +1,7 @@
 :root {
-  font-family:  serif;
+	font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: white;
@@ -63,6 +65,8 @@ padding-right: 33px;
 }
 
 .top_div_content_text p{
+	font-family: "Golos Text", serif;
+  font-weight: 400;
 	color:#313131;
 	font-size: 18px;
 }
@@ -100,6 +104,8 @@ padding-right: 33px;
 	cursor: pointer;
 }
 a {
+	font-family: "Golos Text", serif;
+  font-weight: 400;
 	 text-decoration: none;
 	 color: inherit
 }
@@ -159,7 +165,7 @@ display: inline-block;
 }
 
 .div2_top_div{
-	padding: 80px 72px;
+	padding: 0px 72px;
 	display: flex;
 	justify-content: center;
 	margin-bottom: 165px;
@@ -199,8 +205,6 @@ display: inline-block;
 	display: inline;
 }
 
-
-
 .div2_second_div{
 	align-self: center;
 	width: fit-content;
@@ -232,11 +236,15 @@ width:528px;
 	font-weight: 400;
 }
 .div2_second_div_right_side p{
+	font-family: "Golos Text", serif;
+  font-weight: 400;
 	color:#3057A2;
 	font-size: 20px;
 }
 
 .table {
+	font-family: "Golos Text", serif;
+  font-weight: 400;
 	height:248px;
 	font-size:16px;
 	color:black;
@@ -308,6 +316,8 @@ width:528px;
 }
 
 .div3_top_div b{
+	font-family: "Golos Text", serif;
+  font-weight: 400;
 	text-transform: none;
 	font-size: 20px;
 	color:#3057A2;
@@ -319,6 +329,8 @@ width:528px;
 }
 
 .grid{
+	font-family: "Golos Text", serif;
+  font-weight: 500;
 	display: grid;
 	color: #1F1F1F;
 	width: 1222px;
@@ -327,37 +339,31 @@ width:528px;
 	grid-column-gap: 20px;
   grid-row-gap: 20px; 
 }
-
-.box1{
-	grid-column: 1 ;
-	grid-row: 1 ;
+ .boxdiv1 {
+	grid-row: 1;
+	grid-column: 1 / span 2;
+	display: flex;
 }
-.box2{
-	grid-column: 2 ;
-	grid-row: 1 ;
+.boxdiv3{
+	grid-row: 2;
+	grid-column: 1 / span 2;
+	display: flex;
 }
-.box4{
-	grid-column: 1 ;
-	grid-row: 2 ;
-}
-.box5{
-	grid-column: 2 ;
-	grid-row: 2 ;
-}
-.box3{
+ .boxdiv2{
 	grid-column: 3 ;
 	grid-row: 1 / span 2;
-}
-.box6{
-background-color: #D9D9D9;
-grid-column: 1 ;
-grid-row: 3 ;
-}
-.box7{
+ }
+ .boxdiv4{
+	background-color: #D9D9D9;
+	grid-column: 1 ;
+	grid-row: 3 ;
+ }
+ .boxdiv5{
 	background-color: #D9D9D9;
 	grid-row: 3;
 	grid-column: 2 / span 2;
-}
+ }
+
 
 .box{
 	display: flex;
@@ -398,6 +404,10 @@ font-size: 20px;
 .mobiliVersionBtns{
 	display: none;
 }
+.black{
+	border-radius: 100%;
+	background-color: #313131;
+}
 /* 
 /////////////// */
 
@@ -412,7 +422,6 @@ font-size: 20px;
 	display: flex;
 	justify-content: center;
 	width:screen;
-
 }
 
 .div4_top_div{
@@ -425,15 +434,16 @@ font-size: 20px;
  .container{
 	position: relative;
 	width: 1222px;
-	height: 462px;
 	margin-top:60px;
-	height: 462px;
-	overflow-x: hidden;
 	margin-bottom: 140px;
+	height: 490px;
+	overflow-x: hidden;
 	display: flex;
  }
 
  .container .slide .card{
+	font-family: "Golos Text", serif;
+  font-weight: 400;
 	position: absolute;
 	width: fit-content;
 	display: flex;
@@ -474,8 +484,9 @@ justify-content: space-between;
 }
 
 .details{
+	margin-top: 20px;
 	width: 113px;
-	height:35px;
+	height: 35px;
 	border: 1px solid #3057A2;
 	border-radius: 30px;
 	font-size: 16px;
@@ -494,18 +505,23 @@ justify-content: space-between;
 	background-color: #E9DED4;
 }
 .bottom p{
+	font-family: "Golos Text", serif;
+  font-weight: 400;
 	margin: 0;
 	max-width:1222px
 }
 
 h1{
+	
 	margin:0;
+	margin-top: 28px;
 	font-size: 24px;
 	font-weight: 600;
 	color: #313131;
 }
 h2{
 	margin:0;
+	margin-top: 6px;
 	font-size: 20px;
 	opacity: 60%;
 	color: #313131;
@@ -516,6 +532,8 @@ h2{
 	justify-content: space-between;
 }
 .carousel_btns{
+	font-family: "Golos Text", serif;
+  font-weight: 400;
 	width: 151px;
 	display: flex;
 	justify-content: space-between;
@@ -523,7 +541,7 @@ h2{
 }
 .arrow{
 	border-radius: 100%;
-width: 44px;
+  width: 44px;
 	min-width: 44px;
 	height: 44px;
 	min-height: 44px;
@@ -724,13 +742,15 @@ width: 44px;
 	.div4_top_div{
 		max-width: 850px;
 		padding:0;
-		height: 600px;
+		height: 700px;
 	}
-	
+
 	 .container{
 		max-width: 808px;
-	 }
+		height: 468px;
 
+	 }
+	
 	 .slide .card:nth-child(1){
 		left: -270px
 	 }
@@ -1062,7 +1082,6 @@ width: 44px;
 		width:335px;
 		height:160px;
 		max-height: 160px;
-		
 	}
 
 	 .top_div_content_text p{
@@ -1287,6 +1306,8 @@ border-top: none;
 	width: 335px;
 	max-width: 335px;
 	height: 300px;
+	display: flex;
+	justify-content: center;
 }
 
 .box{
@@ -1300,30 +1321,41 @@ border-top: none;
 	padding: 0;
 	padding-top: 20px;
 	margin: 0;
-	
 }
 
-.boxdiv2{
-	order: 1;
+
+.boxdiv1{
+	flex-direction: column;
 }
-.boxdiv4{
-	order: 2;
+.boxdiv3{
+	flex-direction: column;
 }
+
+
+.boxdiv2,
+.boxdiv4,
 .boxdiv5{
-	order: 3;
+	align-items: center;
+}
+.boxdiv2 div,
+.boxdiv4 div,
+.boxdiv5 div{
+	width: 260px;
 }
 
 .box div{
-	max-width: 300px;
+	max-width: 260px;
 	margin-left: 16px;
 	font-size: 18px;
 }
+
 .box11 div{
-	width: 200px;
+	width: 260px;
 	margin-left: 10;
 	padding: 0;	
 	height: fit-content;
 }
+
 #dots{
 	display: flex;
 	width: 74px;

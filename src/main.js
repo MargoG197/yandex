@@ -104,6 +104,8 @@ document.querySelector('#div2').innerHTML = `
   </div>
 `
 
+
+
 document.querySelector('#div3').innerHTML = `
 <div class="div3_content">
  <div class="div3_top_div">
@@ -117,11 +119,11 @@ document.querySelector('#div3').innerHTML = `
           <div class="greedSliderBox">
       <div class="grid" id="sliderGrid">
         <div class="boxdiv boxdiv1">
-          <div class="box box11 box1">
+          <div class="box box11">
             <p>1</p>
             <div>Строительство железнодорожной магистрали Москва-Васюки</div>
           </div>
-          <div class="box box11 box2">
+          <div class="box box11">
             <p>2</p>
             <div>
               Открытие фешенебельной гостиницы «Проходная пешка» и других
@@ -129,8 +131,8 @@ document.querySelector('#div3').innerHTML = `
             </div>
           </div>
         </div>
-        <div class="box box3 boxdiv boxdiv2">
-          <p>5</p>
+        <div class="box boxdiv boxdiv2">
+          <p>3</p>
           <div>
             Поднятие сельского хозяйства в радиусе на тысячу километров:
             производство овощей, фруктов, икры, шоколадных конфет
@@ -138,16 +140,16 @@ document.querySelector('#div3').innerHTML = `
         </div>
         <div class="boxdiv boxdiv3">
           <div class="box box11 box4">
-            <p>3</p>
+            <p>4</p>
             <div>Строительство дворца для турнира</div>
           </div>
-          <div class="box box11 box5">
-            <p>4</p>
+          <div class="box box11">
+            <p>5</p>
             <div>Размещение гаражей для гостевого автотранспорта</div>
           </div>
         </div>
 
-        <div class="box box11 box6 boxdiv boxdiv4">
+        <div class="box box11boxdiv boxdiv4">
           <p>6</p>
           <div>
             Постройка сверхмощной радиостанции для передачи всему миру
