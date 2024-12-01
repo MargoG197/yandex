@@ -147,8 +147,27 @@ document.querySelector('#div3').innerHTML = `
           </div>
         </div>
       </div>
+       <div class="mobeliVersionBtns">
+              <img id="left" class="mobile_sliderBtn" src="${arrowLeft}" />
+              <p id="dots"></p>
+              <img id="right" class="mobile_sliderBtn" src="${arrowLeft}" />
+            </div>
     </div>
 </div>`;
+
+
+let right = document.querySelector("#right");
+let left = document.querySelector("#left");
+
+
+right.addEventListener('click', function () {
+  
+})
+
+left.addEventListener('click', function () {
+});
+
+
 
 
 document.querySelector('#div4').innerHTML = `

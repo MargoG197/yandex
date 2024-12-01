@@ -380,6 +380,9 @@ font-size: 20px;
 .box3 div{
 	width:270px;
 }
+.mobeliVersionBtns{
+	display: none;
+}
 /* 
 /////////////// */
 
@@ -1352,6 +1355,24 @@ border-top: none;
 	margin-left: 16px;
 	font-size: 18px;
 	}
+
+	.mobeliVersionBtns{
+		display: flex;
+		width: 178px;
+		height: 36px;
+		justify-content: space-between;
+		margin: 28px auto 120px auto;
+	}
+
+	.mobile_sliderBtn{
+  width: 36px;
+  height: 36px;
+	}
+
+	#right{
+		transform:  scale(-1, 1)
+	}
+
 	/* .box11 div{
 		width: 302px;
 		height: 96px;
