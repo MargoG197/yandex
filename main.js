@@ -1,16 +1,8 @@
-import './style.css';
-import logo from './img/logo.svg';
-import round from './img/Ellipse.svg';
-import group from './img/Group.svg';
-import pic from './img/Frame 48095654.png';
-import participant from './img/Picture.png';
-import arrowLeft from './img/carousel button left.svg'
-
 
 document.querySelector('#div1').innerHTML = `
   <div class="top_div">
 	<div class="top_div_firstChild">
-	<img src="${logo}" class="logo" alt="logo" />
+	<img src="./img/logo.svg" class="logo" alt="logo" />
         <div class="top_div_content">
           <div class="top_div_content_text">
             <div class="item_center">Превратите уездный город</div>
@@ -25,8 +17,8 @@ document.querySelector('#div1').innerHTML = `
             </div>
           </div>
           <div class="top_div_content_pic">
-            <img src="${round}" class="pic2"/>
-            <img src="${group}" class="pic"/>
+            <img src="./img/Ellipse.svg" class="pic2"/>
+            <img src="./img/Group.svg" class="pic"/>
           </div>
         </div>
       </div>
@@ -68,7 +60,7 @@ document.querySelector('#div2').innerHTML = `
 	</div>
   
 	<div class="div2_second_div">
-	<img src="${pic}"/>
+	<img src="./img/Frame 48095654.png"/>
 	<div class="div2_second_div_right_side">
 	<div class="div2_second_div_right_side_1">
 	и Сеанс <b>одновременной игры в шахматы на 160 досках</b> гроссмейстера О. Бендера
@@ -167,7 +159,7 @@ document.querySelector('#div3').innerHTML = `
       </div>
     </div>
        <div class="mobiliVersionBtns">
-              <img id="left" class="mobile_sliderBtn dot" src="${arrowLeft}" />
+              <img id="left" class="mobile_sliderBtn dot" src="./img/carousel button left.svg" />
               <div id="dots">
               <p class="dot black"></p>
               <p class="dot"></p>
@@ -175,7 +167,7 @@ document.querySelector('#div3').innerHTML = `
               <p class="dot"></p>
               <p class="dot"></p>
               </div>
-              <img id="right" class="mobile_sliderBtn dot black" src="${arrowLeft}" />
+              <img id="right" class="mobile_sliderBtn dot black" src="./img/carousel button left.svg" />
         </div>
     </div>
 </div>`;
@@ -270,46 +262,46 @@ document.querySelector('#div4').innerHTML = `
           <div class="topCarousel">
             <div class="div3_top_div_text">Участники турнира</div>
             <div class="carousel_btns">
-              <img id="prev" class="mobile_sliderBtn black" src="${arrowLeft}" />
+              <img id="prev" class="mobile_sliderBtn black" src="./img/carousel button left.svg" />
               <p id="slideNumber">1</p>
               <p>/ 6</p>
-              <img id="next" class="mobile_sliderBtn black" src="${arrowLeft}" />
+              <img id="next" class="mobile_sliderBtn black" src="./img/carousel button left.svg" />
         </div>
           </div>
  <section class="container">
       <div class="slide">
             <div class="card">
-              <img src="${participant}" />
+              <img src="./img/Picture.png" />
               <h1>Хозе-Рауль Капабланка</h1>
               <h2>Чемпион мира по шахматам</h2>
               <button class="details">Подробнее</button>
             </div>
             <div class="card">
-              <img src="${participant}" />
+              <img src="./img/Picture.png" />
               <h1>Эммануил Ласкер</h1>
               <h2>Чемпион мира по шахматам</h2>
               <button class="details">Подробнее</button>
             </div>
             <div class="card">
-              <img src="${participant}" />
+              <img src="./img/Picture.png" />
               <h1>Александр Алехин</h1>
               <h2>Чемпион мира по шахматам</h2>
               <button class="details">Подробнее</button>
             </div>
             <div class="card">
-              <img src="${participant}" />
+              <img src="./img/Picture.png" />
               <h1>Арон Нимцович</h1>
               <h2>Чемпион мира по шахматам</h2>
               <button class="details">Подробнее</button>
             </div>
             <div class="card">
-              <img src="${participant}" />
+              <img src="./img/Picture.png" />
               <h1>Рихард Рети</h1>
               <h2>Чемпион мира по шахматам</h2>
               <button class="details">Подробнее</button>
             </div>
             <div class="card">
-              <img src="${participant}" />
+              <img src="./img/Picture.png" />
               <h1>Остап Бендер</h1>
               <h2>Гроссмейстер</h2>
               <button class="details">Подробнее</button>
